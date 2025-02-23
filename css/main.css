@@ -48,7 +48,7 @@ body {
 
 @font-face {
     font-family: 'OmTeloletOm';
-    src: url('./om-telolet-om-cdnfonts/OmTeloletOm.otf') format('opentype');
+    src: url('https://manuellla.github.io/css/om-telolet-om-cdnfonts/OmTeloletOm.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
