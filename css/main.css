@@ -140,6 +140,7 @@ body {
     align-items: flex-start;
     gap: 20px;
     text-align: justify;
+    flex-wrap: wrap;
 }
 
 .about-image {
@@ -150,16 +151,38 @@ body {
     align-self: flex-start;
 }
 
+/* Ensure the text does not shrink too much */
 .about-text {
     max-width: 100%;
+    flex: 1;
 }
 
+/* Caption styling remains the same */
 .about-caption {
     font-size: 0.85em;
     text-align: justify;
     margin-top: 5px;
     color: #555;
 }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-image {
+        max-width: 100%;
+        align-self: center;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+}
+
 
 .footer {
     text-align: center;
