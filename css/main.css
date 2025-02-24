@@ -1,171 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Om+Telolet+Om&display=swap");
-
-body {
-    background-color: #fff;
-    font-family: 'Lato', sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
-.top-nav {
-    padding: 15px 0;
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background: #fff;
-    box-shadow: none;
-	font-size: 1.2em;
-}
-
-.top-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.top-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-.top-nav ul li a {
-    text-decoration: none;
-    color: #000;
-    font-weight: bold;
-}
-
-#home {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: #fff;
-}
-
-@font-face {
-    font-family: 'OmTeloletOm';
-    src: url('https://manuellla.github.io/css/fonts/om-telolet-om-cdnfonts/OmTeloletOm.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-.main-title {
-    font-family: 'OmTeloletOm', sans-serif;
-    font-size: 6em;
-    margin: 0;
-    color: #000;
-}
-
-.intro-text {
-    font-size: 1.2em;
-    color: #555;
-    margin-top: 10px;
-}
-
-.low-intro-container {
-    position: absolute;
-    bottom: 20px;
-    text-align: center;
-}
-
-.low-intro-text {
-    font-size: 0.9em;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.spotify-frame {
-    width: 48%;
-    height: 100px;
-    border-radius: 12px;
-}
-
-.content {
-    padding: 100px 20px 20px;
-}
-
-.content section {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-}
-
-.content section h2 {
-    font-weight: bold;
-}
-
-
-.education-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-	text-align: justify
-}
-
-.education-text {
-    max-width: 60%;
-}
-
-.education-image {
-    max-width: 35%;
-    height: auto;
-    border-radius: 10px;
-}
-
-
-.contact-container {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.contact-icons {
-    margin-top: 10px;
-}
-
-.contact-icons a {
-    margin: 0 10px;
-    font-size: 24px;
-    color: #000;
-    text-decoration: none;
-}
-
-
-.about-container {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    text-align: justify;
-    flex-wrap: wrap;
-}
-
-.about-image {
-    max-width: 200px;
-    height: auto;
-    border-radius: 10px;
-    margin-left: 0;
-    align-self: flex-start;
-}
-
-/* Ensure the text does not shrink too much */
-.about-text {
+/* General Image Responsiveness */
+img, .about-image, .education-image, .publication-image, .extras-video {
     max-width: 100%;
-    flex: 1;
+    height: auto;
+    border-radius: 10px;
 }
 
-/* Caption styling remains the same */
-.about-caption {
-    font-size: 0.85em;
-    text-align: justify;
-    margin-top: 5px;
-    color: #555;
-}
-
-/* Responsive adjustments */
+/* Ensure the about section is responsive */
 @media (max-width: 768px) {
     .about-container {
         flex-direction: column;
@@ -183,50 +23,56 @@ body {
     }
 }
 
+/* Ensure the education section is responsive */
+@media (max-width: 768px) {
+    .education-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
-.footer {
-    text-align: center;
-    padding: 20px 0;
-    font-size: 0.9em;
-    color: #777;
+    .education-text {
+        max-width: 100%;
+    }
+
+    .education-image {
+        max-width: 80%;
+        align-self: center;
+    }
 }
 
-.publication-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    text-align: left;
-    margin-top: 20px;
+/* Ensure the publication section is responsive */
+@media (max-width: 768px) {
+    .publication-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .publication-text {
+        max-width: 100%;
+    }
+
+    .publication-image {
+        max-width: 80%;
+        align-self: center;
+    }
 }
 
-.publication-text {
-    max-width: 60%;
-}
+/* Ensure the extras section is responsive */
+@media (max-width: 768px) {
+    .extras-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
-.publication-image {
-    max-width: 40%;
-    height: auto;
-    border-radius: 10px;
-}
+    .extras-video {
+        max-width: 100%;
+    }
 
-.about-topics {
-    font-size: 0.9em;
-}
-
-.extras-container {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    text-align: justify;
-    margin-top: 40px;
-}
-
-.extras-video {
-    max-width: 25%;
-    aspect-ratio: 1/1;
-}
-
-.extras-text {
-    max-width: 100%;
+    .extras-text {
+        max-width: 100%;
+        text-align: center;
+    }
 }
