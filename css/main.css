@@ -328,3 +328,38 @@ body {
     }
 }
 
+.project-content {
+    max-width: 800px;
+    margin: 80px auto; /* Adds spacing below the menu */
+    padding: 20px;
+    text-align: left;
+}
+
+.project-title {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.project-description {
+    font-size: 1.2em;
+    color: gray;
+    margin-bottom: 20px;
+}
+
+.project-image {
+    width: 60%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.project-details {
+    font-size: 1em;
+    line-height: 1.6;
+    text-align: justify;
+}
+
