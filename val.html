@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous Navigation | Manuela Moura</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <nav class="top-nav">
+        <ul>
+            <li><a href="index.html#about">About Me</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="docs/ManuelaMouraCV.pdf" target="_blank">CV</a></li> 
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="project-content">
+        <h1 class="project-title">Autonomous Navigation & SLAM Integration</h1>
+        <p class="project-subtitle">From Clearpath Jackal Simulations to Full-Scale Vehicle Deployment</p>
+
+        <img src="images/jackal.jpeg" alt="Jackal Robot and Chevrolet Spin" class="project-image">
+
+        <section class="project-section">
+            <h2>Overview</h2>
+            <p class="project-details">
+                This project focuses on the development and deployment of a robust navigation stack for autonomous mobile robots and full-scale vehicles. By leveraging <strong>ROS 1 Noetic</strong>, I worked on a pipeline that transitions from high-fidelity simulation to real-world execution on both a <strong>Clearpath Jackal</strong> UGV and a modified <strong>Chevrolet Spin</strong>.
+            </p>
+        </section>
+
+        <section class="project-section">
+            <h2>Technical Stack & Implementation</h2>
+            <ul class="tech-list">
+                <li><strong>Core Framework:</strong> ROS 1 Noetic (C++ & Python)</li>
+                <li><strong>Simulation:</strong> Gazebo (for Jackal kinematics) and CARLA (for urban environment testing)</li>
+                <li><strong>Localization & Mapping:</strong> Implementation of SLAM algorithms for environment mapping and real-time localization.</li>
+                <li><strong>Navigation:</strong> GNSS Waypoint Following and obstacle avoidance using fused sensor data.</li>
+                <li><strong>Data Analysis:</strong> Conducted extensive data rounds to optimize path-planning efficiency and sensor accuracy.</li>
+            </ul>
+        </section>
+
+        
+
+        <section class="project-section">
+            <h2>Real-World Deployment: Chevrolet Spin</h2>
+            <p class="project-details">
+                The culmination of this research involved implementing the validated navigation solution into a <strong>Chevrolet Spin</strong>. In this setup, the vehicle successfully navigated autonomously through GNSS-defined paths. For safety and compliance, the system controlled steering and throttle, while a human safety driver remained in charge of the braking system.
+            </p>
+        </section>
+
+        <div class="project-meta">
+            <span><strong>Role:</strong> Robotics Developer</span>
+            <span><strong>Environment:</strong> Linux (Ubuntu 20.04)</span>
+        </div>
+    </div>
+
+</body>
+</html>
