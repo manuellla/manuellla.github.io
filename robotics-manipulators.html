@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Manipulator Control | Manuela Moura</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <ul>
+            <li><a href="index.html#about">About Me</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="docs/ManuelaMouraCV.pdf" target="_blank">CV</a></li> 
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="project-content">
+        <h1 class="project-title">Industrial Manipulator Modeling & Control</h1>
+        <p class="project-subtitle">Precision Kinematics and Trajectory Tracking with the Comau SmartSix</p>
+
+        <img src="images/comau_smartsix.jpeg" alt="Comau SmartSix Manipulator" class="project-image">
+
+        <section class="project-section">
+            <h2>Overview</h2>
+            <p class="project-details">
+                This project involved the complete kinematic modeling and control implementation for a <strong>Comau SmartSix</strong> industrial manipulator. The primary objective was to execute high-precision Cartesian paths, including a stylized Brazilian flag in a simulated environment and a geometric rectangle on a physical robot.
+            </p>
+        </section>
+
+        <section class="project-section">
+            <h2>Kinematic Modeling</h2>
+            <p class="project-details">
+                The foundation of the project was the derivation of the robot’s geometry using the <strong>Denavit-Hartenberg (DH) convention</strong>. By defining local coordinate systems for each of the six revolute joints, we established the individual transformation matrices $A_i$ to compute the forward kinematics:
+            </p>
+            <p style="text-align: center; margin: 20px 0;">
+                $${}^{0}T_{6} = A_{1}A_{2}A_{3}A_{4}A_{5}A_{6}$$
+            </p>
+            <p class="project-details">
+                A critical step involved aligning the physical robot's base—which is oriented downward ($Z_0$) in the laboratory—with the virtual simulation environment by applying a $180^\circ$ rotation ($R_{x}(\pi)$) to the base frame to ensure physical-to-virtual consistency.
+            </p>
+        </section>
+
+        <section class="project-section">
+            <h2>Control Strategies & Implementation</h2>
+            <p class="project-details">
+                We implemented two distinct control architectures in <strong>MATLAB</strong> using the <strong>Robotics Toolbox</strong> to manage the end-effector’s pose:
+            </p>
+            <ul class="tech-list">
+                <li><strong>Regulation Control:</strong> Utilized for point-to-point positioning, such as moving from the home state to the initial drawing coordinates. This proportional controller minimizes the pose error $\tilde{X}$ through the inverse Jacobian $J^{-1}$:
+                    <p style="text-align: center; margin: 10px 0;">$$u(t) = J^{-1}(K\tilde{X})$$</p>
+                </li>
+                <li><strong>Trajectory Tracking:</strong> To render the complex geometry of the flag, we employed a <strong>feedforward velocity</strong> approach. This ensured the robot adhered to strict temporal constraints while following parametric equations for the rectangle, rhombus, and circle:
+                    <p style="text-align: center; margin: 10px 0;">$$u(t) = J^{-1}(\dot{X}_{d} + K\tilde{X})$$</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="project-section">
+            <h2>Simulation & Physical Deployment</h2>
+            
+            <p class="project-details">
+                The system was validated through co-simulation between <strong>MATLAB</strong> and <strong>CoppeliaSim</strong>, where we monitored joint positions, control actions, and Euclidean error to confirm asymptotic stability.
+            </p>
+            <p class="project-details">
+                For real-world deployment, we programmed the robot using <strong>PDL2</strong> on a <strong>Comau C4G controller</strong>. This stage included a comparative analysis of <code>MOVE JOINT</code> versus <code>MOVE LINEAR</code> commands, demonstrating that while joint-space motion offers speed for repositioning, Cartesian-linear interpolation is essential for maintaining the geometric integrity of precision paths.
+            </p>
+        </section>
+
+        <div class="project-meta">
+            <span><strong>Role:</strong> Robotics Engineer</span>
+            <span><strong>Environment:</strong> MATLAB, CoppeliaSim, WinC4G</span>
+        </div>
+    </div>
+
+</body>
+</html>
