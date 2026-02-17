@@ -363,46 +363,60 @@ body {
     text-align: justify;
 }
 
-/* Container for the previous projects */
+/* Create the 2x2 Grid */
 .compact-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns side-by-side */
-    gap: 1.2rem;
-    align-items: start;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 20px;
 }
 
-/* Specific scaling for small cards */
-.small-card {
-    padding: 0.8rem !important;
-    transition: transform 0.3s ease;
+/* Turn the Card into a Horizontal Rectangle */
+.horizontal-card {
+    display: flex !important; /* Forces horizontal alignment */
+    flex-direction: row !important;
+    align-items: center;
+    padding: 10px !important;
+    height: 120px; /* Fixed height to keep them uniform */
+    text-decoration: none;
+    overflow: hidden;
 }
 
-.small-card img {
-    height: 110px !important; /* Smaller image height */
+/* Small square-ish image on the left */
+.horizontal-card img {
+    width: 100px !important; 
+    height: 100px !important;
     object-fit: cover;
     border-radius: 4px;
+    margin-right: 15px; /* Space between image and text */
 }
 
-.small-card h3 {
-    font-size: 0.9rem !important; /* Smaller heading */
-    margin: 0.6rem 0 0.4rem 0 !important;
+.horizontal-card .card-text {
+    flex: 1; /* Take up remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.horizontal-card h3 {
+    font-size: 0.9rem !important;
+    margin: 0 0 5px 0 !important;
     line-height: 1.2;
 }
 
-.small-card p {
-    font-size: 0.75rem !important; /* Smaller description */
-    color: #666;
+.horizontal-card p {
+    font-size: 0.75rem !important;
+    margin: 0 !important;
     line-height: 1.3;
+    color: #555;
+    /* Limit text to 2 lines so it doesn't break the rectangle */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
-/* Responsive: 2 columns on tablets, 1 on mobile */
-@media (max-width: 1024px) {
-    .compact-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
+/* Mobile: Stack them in 1 column if the screen is too narrow */
+@media (max-width: 768px) {
     .compact-grid {
         grid-template-columns: 1fr;
     }
