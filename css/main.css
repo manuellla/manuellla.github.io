@@ -363,3 +363,48 @@ body {
     text-align: justify;
 }
 
+/* Container for the previous projects */
+.compact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns side-by-side */
+    gap: 1.2rem;
+    align-items: start;
+}
+
+/* Specific scaling for small cards */
+.small-card {
+    padding: 0.8rem !important;
+    transition: transform 0.3s ease;
+}
+
+.small-card img {
+    height: 110px !important; /* Smaller image height */
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.small-card h3 {
+    font-size: 0.9rem !important; /* Smaller heading */
+    margin: 0.6rem 0 0.4rem 0 !important;
+    line-height: 1.2;
+}
+
+.small-card p {
+    font-size: 0.75rem !important; /* Smaller description */
+    color: #666;
+    line-height: 1.3;
+}
+
+/* Responsive: 2 columns on tablets, 1 on mobile */
+@media (max-width: 1024px) {
+    .compact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .compact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
